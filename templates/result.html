@@ -1,0 +1,14 @@
+<!doctype html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+   <body class="container pt-3 my-3 bg-dark text-white">
+      {% if prediction[0] == 1 %} 
+         <h2>There is a high chance of recovering the bicycle.</h2>
+         <h2>Prediction = {{ prediction[0] }}</h2>
+         <h2>Model used: {{ model_name }}</h2>
+      {% elif prediction[0] == 0 %} 
+         <h2>There is a low chance of recovering the bicycle.</h2>
+         <h2>Prediction = {{ prediction[0] }}</h2>
+         <h2>Model used: {{ model_name }}</h2>
+      {% endif %}
+   </body>
+</html>

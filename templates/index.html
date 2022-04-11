@@ -1,0 +1,158 @@
+<!doctype html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<body class="container pt-3 my-3 bg-dark text-white">
+    <h3 class="display-4">Likelihood of Bicycle Recovery</h3>
+
+<div>
+<form action="/result" method="POST">
+    <label for="Model">Select classifier</label>
+    <select id="Model" name="Model" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="Logistic">Logistic Regression - Soham</option>
+    <option value="SVM">Support Vector Machine - Utkarsh</option>
+    <option value="DT">Decision Tree - Ankit</option>
+    <option value="NN">Multilayer Perceptron - Mahaveer</option>
+    </select>
+    <br>
+    <label for="Occurrence_Month">Occurrence Month</label>
+    <select id="Occurrence_Month" name="Occurrence_Month" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+    <option value="June">June</option>
+    <option value="July">July</option>
+    <option value="August">August</option>
+    <option value="September">September</option>
+    <option value="October">October</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+    </select>
+    <br>
+    <label for="Occurrence_Year">Occurrence Year</label>
+    <select id="Occurrence_Year" name="Occurrence_Year" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    </select>
+    <br>
+    <label for="Report_Month">Reporting Month</label>
+    <select id="Report_Month" name="Report_Month" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="January">January</option>
+    <option value="February">February</option>
+    <option value="March">March</option>
+    <option value="April">April</option>
+    <option value="May">May</option>
+    <option value="June">June</option>
+    <option value="July">July</option>
+    <option value="August">August</option>
+    <option value="September">September</option>
+    <option value="October">October</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+    </select>
+    <br>
+    <label for="Report_Year">Reporting Year</label>
+    <select id="Report_Year" name="Report_Year" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    </select>
+    <br>
+    <label for="Division">Police Division</label>
+    <select id="Division" name="Division" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="D11">D11</option>
+    <option value="D12">D12</option>
+    <option value="D13">D13</option>
+    <option value="D14">D14</option>
+    <option value="D22">D22</option>
+    <option value="D23">D23</option>
+    <option value="D31">D31</option>
+    <option value="D32">D32</option>
+    <option value="D33">D33</option>
+    <option value="D41">D41</option>
+    <option value="D42">D42</option>
+    <option value="D43">D43</option>
+    <option value="D51">D51</option>
+    <option value="D52">D52</option>
+    <option value="D53">D53</option>
+    <option value="D54">D54</option>
+    <option value="D55">D55</option>
+    <option value="NSA">NSA</option>
+    </select>
+    <br>
+    <label for="Hood_ID">Hood ID</label>
+    <input type="text" id="Hood_ID" name="Hood_ID" class="form-control-sm" placeholder="[1-140] / NSA">
+    <br>
+    <label for="Premises_Type">Premises Type</label>
+    <select id="Premises_Type" name="Premises_Type" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="Apartment">Apartment</option>
+    <option value="Commercial">Commercial</option>
+    <option value="Educational">Educational</option>
+    <option value="House">House</option>
+    <option value="Outside">Outside</option>
+    <option value="Transit">Transit</option>
+    <option value="Other">Other</option>
+    </select>
+    <br>
+    <label for="Bike_Type">Bike Type</label>
+    <select id="Bike_Type" name="Bike_Type" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="BM">BM</option>
+    <option value="EL">EL</option>
+    <option value="FO">FO</option>
+    <option value="MT">MT</option>
+    <option value="OT">OT</option>
+    <option value="RC">RC</option>
+    <option value="RE">RE</option>
+    <option value="RG">RG</option>
+    <option value="SC">SC</option>
+    <option value="TA">TA</option>
+    <option value="TO">TO</option>
+    <option value="TR">TR</option>
+    <option value="UN">UN</option>
+    </select>
+    <br>
+    <label for="Bike_Colour">Bike Colour</label>
+    <select id="Bike_Colour" name="Bike_Colour" class="btn btn-info btn-sm dropdown-toggle">
+    <option value="BLK   ">Black</option>
+    <option value="BLU   ">Blue</option>
+    <option value="GRY   ">Grey</option>
+    <option value="WHI   ">White</option>
+    <option value="RED   ">Red</option>
+    <option value="SIL   ">Silver</option>
+    <option value="GRN   ">Green</option>
+    <option value="ONG   ">Orange</option>
+    <option value="PLE   ">Purple</option>
+    <option value="DBL   ">Dark Blue</option>
+    <option value="YEL   ">Yellow</option>
+    <option value="LBL   ">Light Blue</option>
+    <option value="DGR   ">Dark Green</option>
+    <option value="LGR   ">Light Green</option>
+    <option value="BRN   ">Brown</option>
+    <option value="TRQ   ">Turquoise</option>
+    <option value="MRN   ">Maroon</option>
+    <option value="PNK   ">Pink</option>
+    <option value="GLD   ">Gold</option>
+    <option value="BGE   ">Beige</option>
+    </select>
+    <br>
+    <label for="Cost_of_Bike">Cost of Bike</label>
+    <input type="text" id="Cost_of_Bike" name="Cost_of_Bike" class="form-control-sm" placeholder="[0 - 120000]">
+    <br>
+    <input type="submit" value="Submit" class="btn btn-warning btn-sm">
+</form>
+</div>
+</body>
+</html>
